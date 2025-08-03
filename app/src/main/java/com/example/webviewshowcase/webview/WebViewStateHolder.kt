@@ -12,4 +12,13 @@ class WebViewStateHolder(context: Context) {
     fun loadUrl(url: String) {
         webView.loadUrl(url)
     }
+
+    fun destroy() {
+        webView.apply {
+            stopLoading()
+            clearHistory()
+            removeAllViews()
+            destroy()
+        }
+    }
 }

@@ -23,4 +23,9 @@ class MainActivity : ComponentActivity() {
             )
         }
     }
+
+    override fun onDestroy() {
+        webViewStateHolder.destroy()
+        super.onDestroy()
+    }
 }
