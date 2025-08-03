@@ -7,6 +7,7 @@ import com.example.webviewshowcase.cct.CustomTabsLauncher
 import com.example.webviewshowcase.model.SettingsState
 import com.example.webviewshowcase.ui.MainScreen
 import com.example.webviewshowcase.webview.WebViewStateHolder
+import androidx.compose.material3.MaterialTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -16,11 +17,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainScreen(
-                settings = SettingsState(),
-                webViewStateHolder = webViewStateHolder,
-                customTabsLauncher = customTabsLauncher
-            )
+            MaterialTheme {
+                MainScreen(
+                    settings = SettingsState(),
+                    webViewStateHolder = webViewStateHolder,
+                    customTabsLauncher = customTabsLauncher
+                )
+            }
         }
     }
 
